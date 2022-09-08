@@ -2,12 +2,17 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import "./Sidebar.css";
 import avatar from "./assests/Aleksandr.jpg";
+import { useSelector } from "react-redux";
+import { selectUser } from "./app/userSlice";
 const Sidebar = () => {
+	const user = useSelector(selectUser);
 	function recentItem(topic) {
-		return <div className="sidebar-recentItem">
-			<span className="sidebar-hash">#</span>
-			<p>{topic}</p>
-		</div>;
+		return (
+			<div className="sidebar-recentItem">
+				<span className="sidebar-hash">#</span>
+				<p>{topic}</p>
+			</div>
+		);
 	}
 	return (
 		<div className="sidebar">
@@ -16,9 +21,11 @@ const Sidebar = () => {
 					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBMy7xBHWKbtCrS9juXLQFyfyetkT6mc4YZSj6U_MziA&s"
 					alt=""
 				/>
-				<Avatar className="sidebar-avatar" src={avatar} />
-				<h2>Aleksandr Kononov</h2>
-				<h4>FE developer alexandrokononov@gmail.com</h4>
+				<Avatar className="sidebar-avatar" src={user.photoUrl}>
+					{user.email[0]}
+				</Avatar>
+				<h2>{user.displayName}</h2>
+				<h4>{user.email}</h4>
 			</div>
 			<div className="sidebar-stats">
 				<div className="sidebar-stat">

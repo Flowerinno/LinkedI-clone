@@ -2,8 +2,41 @@
 	background-color: #f3f2ef;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 
 .app__body {
 	display: flex;
+	width: 100%;
+	margin-top: 35px;
+	max-width: 97%;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.widgets_article {
+	display: flex;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.widgets_article:hover {
+	background-color: whitesmoke;
+}
+
+.widgets__left {
+	color: #0117b7;
+	margin-right: 5px;
+}
+
+.widgets__left .MuiSvgIcon-root {
+	font-size: 15px;
+}
+.widgets__right h4 {
+	font-size: 14px;
+}
+
+.widgets__right p {
+	font-size: 12px;
+	color: gray;
 }

@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { initializeApp } from "firebase/app"
-import { getFirestore } from "firebase/firestore"
-
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 const firebaseConfig = {
 	apiKey: "AIzaSyAOChKuVp9-UWfvt_1FcFYdhwBKdVzFl1w",
 	authDomain: "firstone-54812.firebaseapp.com",
@@ -16,6 +16,6 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-// const auth = firebase.auth();
+const auth = getAuth();
 
-export { db };
+export { db, auth };
